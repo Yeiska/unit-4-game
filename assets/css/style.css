@@ -1,0 +1,76 @@
+Body{
+  background: url("https://media.giphy.com/media/3oriNNoiGwmioRA9xK/giphy.gif")
+}
+
+button {
+    width: 150px;
+    height: 150px;
+    margin-top: 50px;
+}
+
+p{
+  color: white;
+  height: 30px;
+  padding-top: 10px;
+}
+
+img{
+  width: 100px;
+  height: 100px;
+}
+
+h1{
+  width: 150px;
+  height: 30px;
+  background: blue;
+  color: aqua;
+  text-align: center;
+  padding-top: 10px;
+}
+h2{
+  width: 150px;
+  height: 30px;
+  background: violet;
+  color: rgb(235, 241, 243);
+  text-align: center;
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+.crystal{
+  width: 60px;
+  height: 40;
+}
+
+.instructions{
+  width: 700px;
+  height: 400px;;
+}
+#instructions{
+  width: 700px;
+  height: 300px;;
+}
+
+#container{
+  width: 700px auto;
+}
+#position{
+  
+  width: 700px;
+  height: 700px;
+  margin-left: 100px;
+  margin-top: 40px;
+
+}
+#numberToGuess{
+  background: blueviolet;
+}
+#result, h3{
+  width: 200px;
+  height: 20px;
+  color: white;
+}
+#wins, #lost{
+  width: 200px;
+  height: 20px;
+  color: white;
+}
