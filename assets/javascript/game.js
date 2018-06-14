@@ -8,10 +8,10 @@ var resetAndStart = function () {
   $(".crystals").empty();
 
   var images = [
-    'http://cdn.playbuzz.com/cdn/7a5d7935-6177-4be8-8b72-2a95ad2bcdfe/3b295cc9-7b5e-412f-8b1f-8547edd8e66b.jpg',
+    'http://www.wallpaperweb.org/wallpaper/Digital_art/1920x1200/708_crystals.jpg',
     'http://vignette3.wikia.nocookie.net/marvel-contestofchampions/images/1/1c/2-Star_Crystal.png/revision/latest?cb=20150825213642',
-    'http://jonvilma.com/images/crystal-5.jpg',
-    'https://static.turbosquid.com/Preview/2014/07/08__10_08_09/Crystals0010.jpgc22b2831-ae7a-4cb6-b4ac-612aa7f35ad7Original.jpg'
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRkKxygSsbfWm8d7auadWoTy2WwsSZBNJWfWkNzZFx4AG8yQwhKQ',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS26Dl-nFVSqsl2M9-eEYTDS3pymw4DNf_gqQtE1AATtf8Uu56D'
   ];
 
   random_result = Math.floor(Math.random() * 101) + 19;

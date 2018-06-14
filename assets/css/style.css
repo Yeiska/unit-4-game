@@ -1,7 +1,9 @@
 Body{
-  background: url("https://media.giphy.com/media/3oriNNoiGwmioRA9xK/giphy.gif")
+  background: url("https://media.giphy.com/media/3oriNNoiGwmioRA9xK/giphy.gif");
+  background-size: 100%;
 }
 
+#container: 
 button {
     width: 150px;
     height: 150px;
