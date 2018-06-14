@@ -3,11 +3,6 @@ var lost = 0;
 var win = 0;
 var counter = 0;
 
-// Setters
-// Getters
-
-// $(".crystal").attr('class');
-
 var resetAndStart = function () {
 
 	$(".crystals").empty();
@@ -18,7 +13,7 @@ var resetAndStart = function () {
 			'http://jonvilma.com/images/crystal-5.jpg', 
 			'https://static.turbosquid.com/Preview/2014/07/08__10_08_09/Crystals0010.jpgc22b2831-ae7a-4cb6-b4ac-612aa7f35ad7Original.jpg'];
 		
-	random_result = Math.floor(Math.random() * 69 ) + 30; 
+	random_result = Math.floor(Math.random() * 101 ) + 19; 
 
 
 	$("#result").html('Random Result: ' + random_result);
@@ -50,8 +45,6 @@ var resetAndStart = function () {
 
 resetAndStart();
 
-
-// Event Delegation
 $(document).on('click', ".crystal", function () {
 
 	var num = parseInt($(this).attr('data-random'));
@@ -74,7 +67,7 @@ $(document).on('click', ".crystal", function () {
 		resetAndStart();
 
 	} 
-	else if(counter === random_result){
+	else if(counter === random_result)
 
 		win++;
 
