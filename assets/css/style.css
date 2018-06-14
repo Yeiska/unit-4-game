@@ -15,8 +15,7 @@ p{
 }
 
 img{
-  width: 100px;
-  height: 100px;
+  width: 50px;
 }
 
 h1{
@@ -37,8 +36,15 @@ h2{
   margin-bottom: 10px;
 }
 .crystal{
-  width: 60px;
-  height: 40;
+  width: 150px;
+  height: 150px;
+  border:1px solid blueviolet;
+  border-radius: 4px;
+}
+.crystals{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .instructions{

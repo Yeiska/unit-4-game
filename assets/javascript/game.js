@@ -1,80 +1,92 @@
-// function ready() {
+var random_result;
+var lost = 0;
+var win = 0;
+var counter = 0;
 
-  var counter = 0;
-  var random_result;
-  var lost = 0;
-  var win = 0;
-  var randomNumber;
-  var resetAndStar = function () {
+// Setters
+// Getters
 
-    //$(".crystals").empty();
-    var images = [href = "../images/crystal1.jpg", href = "../images/crystal2.jpg", href = "../images/crystal3.jpg", href = "../images/crystal4.jpg"];
-    //define randon number of game
-    random_result = Math.floor(Math.random() * 101) + 19;
-    $("#result").html('Random Result: ' + random_result);
+// $(".crystal").attr('class');
 
-    //Creating multiple crystals each with their own unique number value.
+var resetAndStart = function () {
 
-    // Next we create a for loop to select a random number to each imag untill 12
-    for (var i = 0; i < 4; i++) {
+	$(".crystals").empty();
 
-      randomNumber = Math.floor(Math.random() * 11) + 1;
+	var images = [
+			'http://cdn.playbuzz.com/cdn/7a5d7935-6177-4be8-8b72-2a95ad2bcdfe/3b295cc9-7b5e-412f-8b1f-8547edd8e66b.jpg', 
+			'http://vignette3.wikia.nocookie.net/marvel-contestofchampions/images/1/1c/2-Star_Crystal.png/revision/latest?cb=20150825213642', 
+			'http://jonvilma.com/images/crystal-5.jpg', 
+			'https://static.turbosquid.com/Preview/2014/07/08__10_08_09/Crystals0010.jpgc22b2831-ae7a-4cb6-b4ac-612aa7f35ad7Original.jpg'];
+		
+	random_result = Math.floor(Math.random() * 69 ) + 30; 
 
-      // For each iteration, we will create an imageCrystal
-      var crystal = $("#" + i);
-      console.log(crystal);
-      // This will allow the CSS to take effect.
-      crystal.attr({
-        "class": "crystal",
-        "crystalvalue": randomNumber
-      });
-      crystal.css({
-        "background-image": "url('" + images[i] + "')",
-        "background-size": "cover"
-      });
-      $(".crystal").append(crystal);
-    }
-    //display om html  the total score
-    $("#counter").html("Total Score: " + counter);
 
-    // Each crystal will be given a src link to the crystal image
-    //crystal.attr("src", "../assest/images/crystal1.jpg");
-  }
-  resetAndStar();
+	$("#result").html('Random Result: ' + random_result);
 
-  // On click event applies to every crystal on the page.
+	for(var i = 0; i < 4; i++){
 
-    $(".crystals").click(function () {
-      //alert("hello");
+		var random = Math.floor(Math.random() * 11) + 1;
 
-      // $(this) keyword specifies that it will be extracting the crystal value of the clicked crystal.
-      // .attr("data-crystalvalue") allows us to grab the value out of the "data-crystalvalue" attribute.
+		var crystal = $("<div>");
+			crystal.attr({
+				"class": 'crystal',
+				"data-random": random
+			});
+			crystal.css({
+				"background-image":"url('" + images[i] + "')",
+				"background-size":"cover"
 
-      // convert strings to an integer before adding to the counter
-      var num = parseInt($(this).attr(randomNumber));
-      console.log(num);
-      // add the crystalValue to the user's "counter"
-      // Every click, on every crystal adds to the global counter.
-      counter += num;
+			});
 
-      $("counter").html(counter);
 
-      if (counter === num) {
-        win++;
-        $("#win").html("You win: " + win);
-        counter = 0;
-        $("counter").html(counter);
-      }
+		$(".crystals").append(crystal);
 
-      else if (counter >= num) {
-        lost++;
-        $("#lost").html("You lost: " + lost);
-        counter = 0;
-      }
-    });
-  // });
-// }
+	}
 
+	$("#counter").html("Total Score: " + counter);
+
+}
+
+
+resetAndStart();
+
+
+// Event Delegation
+$(document).on('click', ".crystal", function () {
+
+	var num = parseInt($(this).attr('data-random'));
+
+	counter += num;
+
+
+	$("#counter").html("Total score: " + counter);
+
+	console.log(counter);
+
+	if(counter > random_result){
+
+		lost++;
+
+		$("#lost").html("You lost: " + lost);
+
+		counter = 0;
+
+		resetAndStart();
+
+	} 
+	else if(counter === random_result){
+
+		win++;
+
+		$("#win").html("You win: " + win);
+
+		counter = 0;
+
+		resetAndStart();
+
+	}
+
+});
 
 
 // Speudo coding
@@ -86,4 +98,4 @@
 // If it is greater than the Random Result, we decrement a lost counter
 // If it is equal, then we increment a win counter
 // A new random number should be generate every single time we win or lost
-// to those 4 crystal
+// to those 4 crystals
